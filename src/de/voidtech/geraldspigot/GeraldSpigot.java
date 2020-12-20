@@ -1,18 +1,14 @@
 package de.voidtech.geraldspigot;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Objects;
-
 public class GeraldSpigot extends JavaPlugin {
+		@Override
+	    public void onEnable() {
+			System.out.println("I'm here, where is my buddy Bottius?");
+	    }
+	    @Override
+	    public void onDisable() {
 
-    @Override
-    public void onEnable() {
-        super.onEnable();
-        Objects.requireNonNull(getCommand("hello?")).setExecutor(new Hello());
-    }
-
-    @Override
-    public void onDisable() {
-    	super.onDisable();
-    }
+	    }
 }

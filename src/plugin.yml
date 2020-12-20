@@ -1,9 +1,6 @@
 name: Gerald-Spigot
-version: 1.0.0
-author: Montori, 0xffset, Elementalmp4
 main: de.voidtech.geraldspigot.GeraldSpigot
-
+version: 1.0
+api-version: 1.16
+author: Montori, 0xffset, ElementalMP4
 commands:
-  hello?:
-    description: Is this working?
-    usage: "Usage: /hello?"
