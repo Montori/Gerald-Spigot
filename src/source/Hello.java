@@ -12,7 +12,7 @@ public class Hello implements CommandExecutor {
         if (!cmd.equals("hello?"))
             return false;
 
-        sender.sendMessage("source.Hello!");
+        sender.sendMessage("Hello!");
 
         return true;
     }

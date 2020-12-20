@@ -13,7 +13,6 @@ public class SetLevel implements CommandExecutor {
         if (!cmd.equals("setlevel") || args.length != 1)
             return false;
 
-        sender.sendMessage("source.Hello!");
         int level;
 
         try {
