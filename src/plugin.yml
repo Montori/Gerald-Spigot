@@ -1,0 +1,13 @@
+name: source.MyPlugin
+version: 1.0.0
+author: 0xffset
+main: source.GeraldSpigot
+
+commands:
+  hello?:
+    description: Is this working?
+    usage: "Usage: /hello?"
+
+  setlevel:
+    description: Sets the players level
+    usage: "Usage: /setlevel [level]"
