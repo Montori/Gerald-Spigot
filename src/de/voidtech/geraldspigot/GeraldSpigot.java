@@ -1,3 +1,4 @@
+package de.voidtech.geraldspigot;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;

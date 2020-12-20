@@ -1,7 +1,7 @@
 name: Gerald-Spigot
 version: 1.0.0
 author: Montori, 0xffset, Elementalmp4
-main: src.GeraldSpigot
+main: de.voidtech.geraldspigot
 
 commands:
   hello?:
