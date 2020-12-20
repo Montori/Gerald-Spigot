@@ -1,0 +1,9 @@
+name: Gerald-Spigot
+version: 1.0.0
+author: Montori, 0xffset, Elementalmp4
+main: src.GeraldSpigot
+
+commands:
+  hello?:
+    description: Is this working?
+    usage: "Usage: /hello?"
