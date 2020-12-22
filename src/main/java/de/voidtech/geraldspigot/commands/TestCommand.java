@@ -1,4 +1,4 @@
-package de.voidtech.geraldspigot.commands;
+package main.java.de.voidtech.geraldspigot.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,5 +11,4 @@ public class TestCommand implements CommandExecutor{
 		sender.sendMessage("Test was successful!");
 		return true;
 	}
-
 }
