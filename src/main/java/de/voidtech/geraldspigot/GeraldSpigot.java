@@ -13,8 +13,10 @@ import main.java.de.voidtech.geraldspigot.commands.TestCommand;
 public class GeraldSpigot extends JavaPlugin {
 	@Override
 	public void onEnable() {
-		System.out.println("I'm here, where is my buddy Bottius?");
+		System.out.println("GERALD: I'm here, where is my buddy Bottius?");
+		System.out.println("GERALD: Loading CommandExecutors...");
 		this.getCommand("test").setExecutor(new TestCommand());
+		System.out.println("GERALD: CommandExecutors loaded!");
 	}
 
 	@Override
