@@ -1,4 +1,4 @@
-package test.java.de.pds.voidtech.geraldspigot.commands;
+package test.java.de.voidtech.geraldspigot.commands;
 
 import org.junit.Test;
 import static org.easymock.EasyMock.mock;
