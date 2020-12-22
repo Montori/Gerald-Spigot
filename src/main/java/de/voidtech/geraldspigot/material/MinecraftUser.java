@@ -24,6 +24,7 @@ public class MinecraftUser {
 	public MinecraftUser(String uuid)
 	{
 		this.minecraftUUID = uuid;
+		this.currency = 0L;
 	}
 
 	public long getUserID() {
