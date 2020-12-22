@@ -17,7 +17,8 @@ public class MinecraftUser {
 	/**
 	 * ONLY for the ORM, DO NOT USE
 	 */
-	public MinecraftUser() {
+	@Deprecated
+	MinecraftUser() {
 	}
 	
 	public MinecraftUser(String uuid)
