@@ -42,12 +42,13 @@ public class DatabaseService {
 	 */
 	public void initDatabase() {
 		try {
+			Class.forName("org.h2.Driver"); 
 			ConnectionSource connectionSource = new JdbcPooledConnectionSource("jdbc:h2:mem:geraldSpigotDB");
 			for(RegisteredDatabaseEntities entity : RegisteredDatabaseEntities.values())
 			{
 				TableUtils.createTableIfNotExists(connectionSource, entity.getEntityClass());
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			LOGGER.log(Level.SEVERE, "An Error has occurred during Database initilization: " + e.getMessage());
 		}
 	}
@@ -57,13 +58,14 @@ public class DatabaseService {
 	 */
 	public void initDatabaseForTest() {
 		try {
+			Class.forName("org.h2.Driver"); 
 			ConnectionSource connectionSource = new JdbcPooledConnectionSource("jdbc:h2:mem:geraldSpigotDBForTest");
 			// Drop existing Tables and init all Entities
 			for (RegisteredDatabaseEntities entity : RegisteredDatabaseEntities.values()) {
 				TableUtils.dropTable(connectionSource, entity.getEntityClass(), true);
 				TableUtils.createTableIfNotExists(connectionSource, entity.getEntityClass());
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			LOGGER.log(Level.SEVERE, "An Error has occurred during Database initilization: " + e.getMessage());
 		}
 	}
