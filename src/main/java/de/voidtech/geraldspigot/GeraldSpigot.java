@@ -6,22 +6,18 @@ import org.bukkit.plugin.java.annotation.plugin.Plugin;
 import org.bukkit.plugin.java.annotation.plugin.author.Author;
 
 import main.java.de.voidtech.geraldspigot.commands.TestCommand;
-import main.java.de.voidtech.geraldspigot.database.DatabaseService;
+
 
 @Plugin(name = "GeraldSpigot", version = "0.0.1")
 @Author(name = "Montori, 0xffset, ElementalMP4")
 @Command(name = "test", desc = "test command")
+@Command(name = "registerme", desc = "registers u")
+@Command(name = "getall", desc = "gets all users in the db")
 public class GeraldSpigot extends JavaPlugin {
-	
-	private DatabaseService dbService;
 	
 	@Override
 	public void onEnable() {
 		System.out.println("GERALD: I'm here, where is my buddy Bottius?");
-		
-		dbService = DatabaseService.getDatabaseService();
-		dbService.initDatabase();
-		System.out.println("GERALD: Database Initialized");
 		
 		this.getCommand("test").setExecutor(new TestCommand());
 		System.out.println("GERALD: CommandExecutors loaded!");

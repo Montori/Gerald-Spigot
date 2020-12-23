@@ -1,17 +1,11 @@
 package main.java.de.voidtech.geraldspigot.material;
 
-import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "mc_users")
 public class MinecraftUser {
-	@DatabaseField(generatedId = true)
 	private long userID;
 
-	@DatabaseField(canBeNull = false)
 	private String minecraftUUID;
 
-	@DatabaseField(defaultValue = "0", canBeNull = false)
 	private long currency;
 
 	/**
