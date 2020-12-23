@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
-import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
+import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
@@ -30,7 +30,7 @@ public class DatabaseService {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public <T> Dao<T, Long> getDAO(Class<T> sourceClass) throws SQLException {
-		ConnectionSource connectionSource = new JdbcPooledConnectionSource("jdbc:h2:mem:geraldSpigotDBForTest");
+		ConnectionSource connectionSource = new JdbcConnectionSource("jdbc:h2:mem:geraldSpigotDBForTest");
 		Dao dao = DaoManager.createDao(connectionSource, sourceClass);
 		return dao;
 	}
@@ -43,7 +43,7 @@ public class DatabaseService {
 	public void initDatabase() {
 		try {
 			Class.forName("org.h2.Driver"); 
-			ConnectionSource connectionSource = new JdbcPooledConnectionSource("jdbc:h2:mem:geraldSpigotDB");
+			ConnectionSource connectionSource = new JdbcConnectionSource("jdbc:h2:mem:geraldSpigotDB");
 			for(RegisteredDatabaseEntities entity : RegisteredDatabaseEntities.values())
 			{
 				TableUtils.createTableIfNotExists(connectionSource, entity.getEntityClass());
@@ -59,7 +59,7 @@ public class DatabaseService {
 	public void initDatabaseForTest() {
 		try {
 			Class.forName("org.h2.Driver"); 
-			ConnectionSource connectionSource = new JdbcPooledConnectionSource("jdbc:h2:mem:geraldSpigotDBForTest");
+			ConnectionSource connectionSource = new JdbcConnectionSource("jdbc:h2:mem:geraldSpigotDBForTest");
 			// Drop existing Tables and init all Entities
 			for (RegisteredDatabaseEntities entity : RegisteredDatabaseEntities.values()) {
 				TableUtils.dropTable(connectionSource, entity.getEntityClass(), true);
